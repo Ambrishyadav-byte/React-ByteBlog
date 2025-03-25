@@ -56,4 +56,4 @@ export class AuthencationService{
        }
 }
 const authencationService = new AuthencationService()
-export default authencationService;zz
+export default authencationService;
