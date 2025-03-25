@@ -43,10 +43,12 @@ export class AuthencationService{
         try {
             return await this.account.get();
         } catch (error) {
-            throw error;
+            console.error("Error fetching user:", error);  // Log the error
+            return null;  // Ensure a valid return value
         }
-        return null;
-       }
+    }
+    
+       
        async logout(){
         try {
             await this.account.deleteSessions();

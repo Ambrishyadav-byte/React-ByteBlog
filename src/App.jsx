@@ -12,8 +12,11 @@ function App() {
       .then((userData)=>{
         if (userData) {
          dispatch(login({userData}))
+         console.log("User Found")
         } else {
           dispatch(logout())
+          console.log("No user found")
+          
         }
       })
       .finally(()=>
