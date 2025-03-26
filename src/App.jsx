@@ -1,40 +1,35 @@
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import './App.css'
 import authencationService from './appwrite_services/auth'
-import { login,logout } from './configs/authSlice'
+import { login, logout } from './configs/authSlice'
+import Footer from './components/footer/Footer' // Capitalized
+import Header from './components/header/Header' // Capitalized
 
 function App() {
   const [loading, setLoading] = useState(true)
   const dispatch = useDispatch()
+
   useEffect(() => {
     authencationService.getCurrentuser()
-      .then((userData)=>{
+      .then((userData) => {
         if (userData) {
-         dispatch(login({userData}))
-         console.log("User Found")
+          dispatch(login({ userData }))
+          console.log("User Found")
         } else {
           dispatch(logout())
           console.log("No user found")
-          
         }
       })
-      .finally(()=>
-      setLoading(false))
-
+      .finally(() => setLoading(false))
   }, [])
+
   return !loading ? (
     <div className="App">
-      <header className="App-header">
-        <h1>Appwrite Auth</h1>
-        
-      </header>
-      <footer>
-        <h2>footer</h2>
-      </footer>
+      <Header />  {/* ✅ Properly used */}
+      <h1>Welcome to My App</h1>
+      <Footer />  {/* ✅ Properly used */}
     </div>
-
-    
   ) : <div>Loading...</div>
 }
 
