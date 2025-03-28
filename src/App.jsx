@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import './App.css'
+
 import authencationService from './appwrite_services/auth'
 import { login, logout } from './configs/authSlice'
 import Footer from './components/footer/Footer' // Capitalized
