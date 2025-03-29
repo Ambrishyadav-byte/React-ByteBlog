@@ -4,5 +4,6 @@ import Input from "./Input";
 import Button from "./Button";
 import Select from "./Select";
 import PostCard from "./PostCard";
-
-export { Header, Footer, Input , Button, Select, PostCard };
+import RTE from "./RTE";
+import Login from "./Login";
+export { Header, Footer, Input , Button, Select, PostCard , , RTE, Login };
